@@ -7,34 +7,37 @@ One combined home for two old WordPress blogs, served as plain static files
   Tagline: “Explore the world with us”
 - **Watson Eats** — 38 published food posts, Apr 2015 – Mar 2020.
   Tagline: “Surprisingly, not only bacon.”
-- **Total: 86 published posts.** The homepage has a toggle at the top
-  (Wandering Watsons | Watson Eats); `?view=watsoneats` / `?view=wanderingwatsons`
-  / `?view=all` in the URL is the source of truth for the view.
+- **Total: 86 published posts.** The homepage (Wandering Watsons) is the main
+  hub, with a tab bar at the top: **Wandering Watsons** (`index.html`) and
+  **Watson Eats** (`eats.html`). Every post page has the same tab bar. Old
+  `?view=watsoneats` / `?view=wanderingwatsons` links redirect to the right hub.
 
 ## What is in here
 
-- `index.html` — homepage, toggle, intro, full post list (86 items)
+- `index.html` — Wandering Watsons hub: tab bar, intro, 48 travel posts
+- `eats.html` — Watson Eats hub: tab bar, intro, 38 recipes
 - `posts/<slug>.html` — one page per post (86 files), prev/next within its own blog
 - `style.css`, `script.js` — the only CSS/JS; system fonts, no libraries
 - `sitemap.xml`, `inventory.md` — every post, with date, slug and image count
 - `CNAME` — contains `wanderingwatsons.com`
 - `.nojekyll` — tells GitHub Pages to serve files as-is
 
-## Known gap: images
+## Images
 
-Post content links images at `http://www.wanderingwatsons.com/wp-content/uploads/...`
-and `http://www.watsoneats.com/wp-content/uploads/...`. Those image files were
-**not** in the WordPress exports and the old hosts may be dead, so some photos
-may not load. The original URLs were kept as-is (nothing was downloaded or
-re-hosted). Images have `loading="lazy"` and an `onerror` handler that hides a
-broken image, so pages still read cleanly.
+The posts' photos were recovered from the Wayback Machine in November 2026
+(see `../recover_images.py` and `../recovery_log.json`): 314 of the
+373 referenced images were recovered and now live in this folder under
+`images/<original host>/wp-content/uploads/...`, served from the site itself.
+Any image not recovered keeps its original
+`http://www.wanderingwatsons.com/wp-content/uploads/...` /
+`http://www.watsoneats.com/wp-content/uploads/...` URL, with `loading="lazy"`
+and an `onerror` handler that hides it if it fails to load, so pages still
+read cleanly.
 
 - Wandering Watsons: 372 images referenced across 48 posts; 44 posts have
   images, 4 have none.
 - Watson Eats: 1 image referenced across 38 posts; 37 posts have no images
   (most recipes were text-only in the export).
-- If the original image files turn up (e.g. a media backup), they can be copied
-  into `images/` and the URLs rewritten — that is the one remaining fix-up.
 
 ## Posts that were NOT included (drafts)
 
@@ -84,8 +87,8 @@ DNS can take up to a few hours to propagate. Then tick **Enforce HTTPS**
 in the repo’s Pages settings once the certificate is ready.
 
 The old `watsoneats.com` domain is not needed for this site — all Watson Eats
-content lives here under the Watson Eats toggle. It can be left to expire or
-redirected to wanderingwatsons.com/?view=watsoneats if desired.
+content lives here on the Watson Eats tab (`/eats.html`). It can be left to
+expire or redirected to wanderingwatsons.com/eats.html if desired.
 
 ## Rebuilding
 

@@ -14,13 +14,14 @@ header.site { text-align: center; padding: 36px 20px 8px; }
 header.site h1 { margin: 0; font-size: 2.4rem; line-height: 1.1; letter-spacing: -0.5px; }
 header.site h1 a { color: var(--ink); text-decoration: none; }
 header.site .tagline { color: var(--muted); font-style: italic; margin: 6px 0 0; }
-.toggle { display: flex; gap: 0; justify-content: center; margin: 22px auto 8px;
-  max-width: 520px; border: 2px solid var(--accent); border-radius: 999px; overflow: hidden; }
-.toggle a { flex: 1; text-align: center; padding: 10px 8px; text-decoration: none;
-  color: var(--accent); font-weight: 700; background: var(--card); }
-.toggle a.active { background: var(--accent); color: #fff; }
-.toggle a small { display: block; font-weight: 400; font-size: 0.8rem; opacity: .85; }
-.view-note { text-align: center; color: var(--muted); font-size: 0.9rem; margin: 4px 0 0; }
+.tabs { display: flex; justify-content: center; margin: 22px auto 0;
+  max-width: 520px; border-bottom: 2px solid var(--accent); }
+.tabs a { flex: 1; text-align: center; padding: 10px 8px 8px; text-decoration: none;
+  color: var(--accent); font-weight: 700; background: var(--card);
+  border: 2px solid var(--line); border-bottom: none; border-radius: 10px 10px 0 0;
+  margin: 0 3px; }
+.tabs a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.tabs a small { display: block; font-weight: 400; font-size: 0.8rem; opacity: .85; }
 .intro { background: var(--accent-soft); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 18px 20px; margin: 24px 0 8px; }
 .intro h2 { margin: 0 0 6px; font-size: 1.25rem; }
