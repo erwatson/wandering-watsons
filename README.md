@@ -9,35 +9,37 @@ One combined home for two old WordPress blogs, served as plain static files
   Tagline: “Surprisingly, not only bacon.”
 - **Total: 86 published posts.** The homepage (Wandering Watsons) is the main
   hub, with a sticky top nav bar on every page: **Travel** (`index.html`),
-  **Food** (`eats.html`), **Tags** (`/tags/`) and **Categories**
-  (`/categories/`). Old `?view=watsoneats` / `?view=wanderingwatsons` links
-  redirect to the right hub.
+  **Food** (`eats.html`) and **Tags** (`/tags/`). Old `?view=watsoneats` /
+  `?view=wanderingwatsons` links redirect to the right hub.
 
 ## Design
 
 Bright and playful, no brown: teal + coral for the travel side, tomato red +
-leaf green for the food side. Every page has the sticky top nav; hub and
-category/tag pages have an illustrated hero band (sun, mountains and waves
-for travel; plate, leaf and fork for food, drawn as inline SVG line art),
-and post pages carry a slim patterned strip under the nav.
+leaf green for the food side. Every page has the sticky top nav. Each hub
+has a photo hero — a still photo with the title over it (Nerja for travel,
+Thanksgiving cooking for food). Tag pages have an illustrated hero band
+(sun, mountains and waves for travel; plate, leaf and fork for food, drawn
+as inline SVG line art), and post pages carry a slim patterned strip under
+the nav.
 
-## Categories and tags
+## Tags
 
-From the WordPress exports: categories are Dinner / Breakfast / Dessert /
-Drinks (Watson Eats only — the travel blog's "Blog" and "Uncategorized"
-categories are left out as meaningless). Tags are places, themes and
-ingredients, merged case-insensitively. Every category and tag has its own
-page (`/categories/<slug>.html`, `/tags/<slug>.html`), the sidebar on every
-page links to them (popular tags with 3+ posts), and a post page's sidebar
-shows that post's own categories and tags, all clickable.
+One taxonomy. WordPress had two — categories and post tags — but they split
+the same ideas, so both are merged into one tag set, matched
+case-insensitively ("Hike" and "hiking" are one tag; the "Dinner" category
+and the "dinner" tag are one tag). The "Blog" and "Uncategorized" defaults
+are left out as meaningless. Every tag has its own page
+(`/tags/<slug>.html`), the sidebar on every page links to the popular ones
+(3+ posts), and the tags listed under each post title — on hub pages, tag
+pages and the post itself ("Date · Tags: ...") — are all clickable links
+to their tag pages.
 
 ## What is in here
 
-- `index.html` — Wandering Watsons hub: nav bar, illustrated hero, 48 travel posts
-- `eats.html` — Watson Eats hub: nav bar, illustrated hero, 38 recipes
+- `index.html` — Wandering Watsons hub: nav bar, photo hero, 48 travel posts
+- `eats.html` — Watson Eats hub: nav bar, photo hero, 38 recipes
 - `posts/<slug>.html` — one page per post (86 files), prev/next within its own blog
-- `categories/<slug>.html` + `categories/index.html` — one page per category
-- `tags/<slug>.html` + `tags/index.html` — one page per tag (188 tags)
+- `tags/<slug>.html` + `tags/index.html` — one page per tag
 - `style.css`, `script.js` — the only CSS/JS; system fonts, no libraries
 - `sitemap.xml`, `inventory.md` — every post, with date, slug and image count
 - `CNAME` — contains `wanderingwatsons.com`
@@ -52,8 +54,9 @@ The posts' photos were recovered from the Wayback Machine in November 2026
 Any image not recovered keeps its original
 `http://www.wanderingwatsons.com/wp-content/uploads/...` /
 `http://www.watsoneats.com/wp-content/uploads/...` URL, with `loading="lazy"`
-and an `onerror` handler that hides it if it fails to load, so pages still
-read cleanly.
+and an `onerror` handler that swaps in a "Photo not available" placeholder
+if it fails to load, so a missing photo is visible as such instead of a
+broken-image icon or an empty gap.
 
 - Wandering Watsons: 372 images referenced across 48 posts; 44 posts have
   images, 4 have none.

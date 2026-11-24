@@ -2,12 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://wanderingwatsons.com/</loc></url>
   <url><loc>https://wanderingwatsons.com/eats.html</loc></url>
-  <url><loc>https://wanderingwatsons.com/categories/</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/</loc></url>
-  <url><loc>https://wanderingwatsons.com/categories/breakfast.html</loc></url>
-  <url><loc>https://wanderingwatsons.com/categories/dessert.html</loc></url>
-  <url><loc>https://wanderingwatsons.com/categories/dinner.html</loc></url>
-  <url><loc>https://wanderingwatsons.com/categories/drinks.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/beer.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/belgium.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/bruges.html</loc></url>
@@ -116,15 +111,15 @@
   <url><loc>https://wanderingwatsons.com/tags/oakland.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/usa.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/pork.html</loc></url>
-  <url><loc>https://wanderingwatsons.com/tags/curry.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/dinner.html</loc></url>
+  <url><loc>https://wanderingwatsons.com/tags/breakfast.html</loc></url>
+  <url><loc>https://wanderingwatsons.com/tags/dessert.html</loc></url>
+  <url><loc>https://wanderingwatsons.com/tags/curry.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/meatless.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/thai.html</loc></url>
-  <url><loc>https://wanderingwatsons.com/tags/dessert.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/family-recipe.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/ice-cream.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/bread.html</loc></url>
-  <url><loc>https://wanderingwatsons.com/tags/breakfast.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/pastry.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/zucchini-bread.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/chocolate-chip.html</loc></url>
@@ -147,6 +142,7 @@
   <url><loc>https://wanderingwatsons.com/tags/ethnic.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/p-noot.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/spicey.html</loc></url>
+  <url><loc>https://wanderingwatsons.com/tags/drinks.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/chicken.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/fried-rice.html</loc></url>
   <url><loc>https://wanderingwatsons.com/tags/caramel.html</loc></url>
