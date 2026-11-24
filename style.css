@@ -1,7 +1,12 @@
 /* Wandering Watsons — plain static site, system fonts only */
 :root {
-  --ink: #2b2620; --muted: #6f675c; --accent: #a34d2d; --accent-soft: #f7ead9;
-  --line: #e3d9c8; --bg: #fdfaf5; --card: #fff; --radius: 10px;
+  --ink: #22313f; --muted: #5b6b7a; --accent: #0e7490; --accent-strong: #0891b2;
+  --accent-soft: #dcf2f7; --pop: #fb7185;
+  --line: #d7e6ec; --bg: #f2fafc; --card: #fff; --radius: 14px;
+}
+body.site-watsoneats {
+  --accent: #d9481c; --accent-strong: #e0531f; --accent-soft: #fdeeda;
+  --pop: #16a34a; --line: #eeddcf; --bg: #fdf7f1;
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink);
@@ -9,30 +14,46 @@ body { margin: 0; background: var(--bg); color: var(--ink);
   font-size: 18px; line-height: 1.65; }
 a { color: var(--accent); }
 a:hover { text-decoration-thickness: 2px; }
-.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 60px; }
-header.site { text-align: center; padding: 36px 20px 8px; }
-header.site h1 { margin: 0; font-size: 2.4rem; line-height: 1.1; letter-spacing: -0.5px; }
-header.site h1 a { color: var(--ink); text-decoration: none; }
-header.site .tagline { color: var(--muted); font-style: italic; margin: 6px 0 0; }
-.tabs { display: flex; justify-content: center; margin: 22px auto 0;
-  max-width: 520px; border-bottom: 2px solid var(--accent); }
-.tabs a { flex: 1; text-align: center; padding: 10px 8px 8px; text-decoration: none;
-  color: var(--accent); font-weight: 700; background: var(--card);
-  border: 2px solid var(--line); border-bottom: none; border-radius: 10px 10px 0 0;
-  margin: 0 3px; }
-.tabs a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.tabs a small { display: block; font-weight: 400; font-size: 0.8rem; opacity: .85; }
-.intro { background: var(--accent-soft); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 18px 20px; margin: 24px 0 8px; }
-.intro h2 { margin: 0 0 6px; font-size: 1.25rem; }
-.intro p { margin: 8px 0; }
-.intro .sites { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; margin-top: 12px; }
-@media (max-width: 560px) { .intro .sites { grid-template-columns: 1fr; } }
-.intro .sites div { background: var(--card); border: 1px solid var(--line);
-  border-radius: 8px; padding: 12px 14px; }
-.intro .sites h3 { margin: 0 0 4px; font-size: 1.05rem; }
-.intro .sites p { margin: 0; font-size: 0.95rem; color: var(--muted); }
-h2.section { margin: 32px 0 4px; font-size: 1.4rem; }
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px 60px; }
+.layout { display: flex; gap: 36px; align-items: flex-start; }
+.layout main { flex: 1; min-width: 0; }
+.sidebar { width: 250px; flex-shrink: 0; position: sticky; top: 20px; }
+@media (max-width: 900px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; position: static; }
+}
+.sidebar h3 { font-size: 1rem; margin: 26px 0 8px; }
+.sidebar h3:first-child { margin-top: 8px; }
+.sidebar ul { list-style: none; margin: 0; padding: 0; }
+.sidebar li { padding: 3px 0; font-size: 0.95rem; }
+.sidebar .count { color: var(--muted); font-size: 0.85rem; }
+.sidebar a.active { font-weight: 700; color: var(--ink); }
+.sidebar .filed-under { background: var(--accent-soft); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 12px 14px; }
+.sidebar .filed-under h3 { margin-top: 0; }
+.sidebar .filed-under ul { margin: 0; }
+.topnav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96);
+  border-bottom: 2px solid var(--line); }
+.topnav-inner { max-width: 1060px; margin: 0 auto; padding: 0 20px; height: 56px;
+  display: flex; align-items: center; gap: 6px; }
+.topnav .brand { font-weight: 800; font-size: 1.2rem; color: var(--ink);
+  text-decoration: none; margin-right: auto; }
+.topnav .brand b { color: var(--accent); }
+.topnav a.navlink { color: var(--ink); text-decoration: none; font-weight: 600;
+  padding: 6px 12px; border-radius: 999px; }
+.topnav a.navlink:hover { background: var(--accent-soft); }
+.topnav a.navlink.active { background: var(--accent); color: #fff; }
+.hero { background-color: var(--accent-strong); background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27140%27%20height%3D%27140%27%20viewBox%3D%270%200%20140%20140%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23ffffff%27%20stroke-opacity%3D%270.30%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%27106%27%20cy%3D%2726%27%20r%3D%2711%27%2F%3E%3Cpath%20d%3D%27M106%208v5M106%2039v5M88%2026h5M119%2026h5%27%2F%3E%3Cpath%20d%3D%27M8%20108%20L38%2062%20L60%2096%20L78%2070%20L112%20108%20Z%27%2F%3E%3Cpath%20d%3D%27M8%20128%20q10%20-8%2020%200%20t20%200%20t20%200%20t20%200%20t20%200%20t20%200%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 140px 140px; color: #fff; border-radius: var(--radius);
+  padding: 36px 28px; margin: 24px 0 8px; }
+body.site-watsoneats .hero { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27140%27%20height%3D%27140%27%20viewBox%3D%270%200%20140%20140%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23ffffff%27%20stroke-opacity%3D%270.30%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2732%27%20r%3D%2715%27%2F%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2732%27%20r%3D%276%27%2F%3E%3Cpath%20d%3D%27M104%2020%20q14%20-10%2024%202%20q-12%2012%20-24%20-2%20Z%27%2F%3E%3Cpath%20d%3D%27M100%2030%20q2%2010%2012%2012%27%2F%3E%3Cpath%20d%3D%27M18%20108%20q8%20-9%2016%200%20t16%200%27%2F%3E%3Cpath%20d%3D%27M92%2092%20v-12%20M100%2092%20v-14%20M108%2092%20v-12%27%2F%3E%3Cpath%20d%3D%27M90%20100%20h20%27%2F%3E%3Cpath%20d%3D%27M100%20104%20v14%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); }
+.hero h1 { margin: 0; font-size: 2.1rem; line-height: 1.15; }
+.hero p { margin: 8px 0 0; font-size: 1.1rem; opacity: .95; }
+.hero-slim { height: 16px; border-radius: 999px; margin: 20px 0 0;
+  background-color: var(--accent-strong); background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27140%27%20height%3D%27140%27%20viewBox%3D%270%200%20140%20140%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23ffffff%27%20stroke-opacity%3D%270.30%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%27106%27%20cy%3D%2726%27%20r%3D%2711%27%2F%3E%3Cpath%20d%3D%27M106%208v5M106%2039v5M88%2026h5M119%2026h5%27%2F%3E%3Cpath%20d%3D%27M8%20108%20L38%2062%20L60%2096%20L78%2070%20L112%20108%20Z%27%2F%3E%3Cpath%20d%3D%27M8%20128%20q10%20-8%2020%200%20t20%200%20t20%200%20t20%200%20t20%200%20t20%200%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 140px 140px; }
+body.site-watsoneats .hero-slim { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27140%27%20height%3D%27140%27%20viewBox%3D%270%200%20140%20140%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23ffffff%27%20stroke-opacity%3D%270.30%27%20stroke-width%3D%273%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2732%27%20r%3D%2715%27%2F%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2732%27%20r%3D%276%27%2F%3E%3Cpath%20d%3D%27M104%2020%20q14%20-10%2024%202%20q-12%2012%20-24%20-2%20Z%27%2F%3E%3Cpath%20d%3D%27M100%2030%20q2%2010%2012%2012%27%2F%3E%3Cpath%20d%3D%27M18%20108%20q8%20-9%2016%200%20t16%200%27%2F%3E%3Cpath%20d%3D%27M92%2092%20v-12%20M100%2092%20v-14%20M108%2092%20v-12%27%2F%3E%3Cpath%20d%3D%27M90%20100%20h20%27%2F%3E%3Cpath%20d%3D%27M100%20104%20v14%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); }
+h2.section { margin: 24px 0 4px; font-size: 1.4rem; }
 .post-list { list-style: none; margin: 8px 0 0; padding: 0; }
 .post-list li { border-bottom: 1px solid var(--line); padding: 14px 2px; }
 .post-list li.hidden { display: none; }

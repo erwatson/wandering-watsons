@@ -8,15 +8,36 @@ One combined home for two old WordPress blogs, served as plain static files
 - **Watson Eats** — 38 published food posts, Apr 2015 – Mar 2020.
   Tagline: “Surprisingly, not only bacon.”
 - **Total: 86 published posts.** The homepage (Wandering Watsons) is the main
-  hub, with a tab bar at the top: **Wandering Watsons** (`index.html`) and
-  **Watson Eats** (`eats.html`). Every post page has the same tab bar. Old
-  `?view=watsoneats` / `?view=wanderingwatsons` links redirect to the right hub.
+  hub, with a sticky top nav bar on every page: **Travel** (`index.html`),
+  **Food** (`eats.html`), **Tags** (`/tags/`) and **Categories**
+  (`/categories/`). Old `?view=watsoneats` / `?view=wanderingwatsons` links
+  redirect to the right hub.
+
+## Design
+
+Bright and playful, no brown: teal + coral for the travel side, tomato red +
+leaf green for the food side. Every page has the sticky top nav; hub and
+category/tag pages have an illustrated hero band (sun, mountains and waves
+for travel; plate, leaf and fork for food, drawn as inline SVG line art),
+and post pages carry a slim patterned strip under the nav.
+
+## Categories and tags
+
+From the WordPress exports: categories are Dinner / Breakfast / Dessert /
+Drinks (Watson Eats only — the travel blog's "Blog" and "Uncategorized"
+categories are left out as meaningless). Tags are places, themes and
+ingredients, merged case-insensitively. Every category and tag has its own
+page (`/categories/<slug>.html`, `/tags/<slug>.html`), the sidebar on every
+page links to them (popular tags with 3+ posts), and a post page's sidebar
+shows that post's own categories and tags, all clickable.
 
 ## What is in here
 
-- `index.html` — Wandering Watsons hub: tab bar, intro, 48 travel posts
-- `eats.html` — Watson Eats hub: tab bar, intro, 38 recipes
+- `index.html` — Wandering Watsons hub: nav bar, illustrated hero, 48 travel posts
+- `eats.html` — Watson Eats hub: nav bar, illustrated hero, 38 recipes
 - `posts/<slug>.html` — one page per post (86 files), prev/next within its own blog
+- `categories/<slug>.html` + `categories/index.html` — one page per category
+- `tags/<slug>.html` + `tags/index.html` — one page per tag (188 tags)
 - `style.css`, `script.js` — the only CSS/JS; system fonts, no libraries
 - `sitemap.xml`, `inventory.md` — every post, with date, slug and image count
 - `CNAME` — contains `wanderingwatsons.com`
