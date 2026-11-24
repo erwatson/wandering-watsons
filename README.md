@@ -15,12 +15,10 @@ One combined home for two old WordPress blogs, served as plain static files
 ## Design
 
 Bright and playful, no brown: teal + coral for the travel side, tomato red +
-leaf green for the food side. Every page has the sticky top nav. Each hub
-has a photo hero — a still photo with the title over it (Nerja for travel,
-Thanksgiving cooking for food). Tag pages have an illustrated hero band
-(sun, mountains and waves for travel; plate, leaf and fork for food, drawn
-as inline SVG line art), and post pages carry a slim patterned strip under
-the nav.
+leaf green for the food side. Every page has the sticky top nav, and hub,
+tag and post pages all carry the illustrated hero band (sun, mountains and
+waves for travel; plate, leaf and fork for food, drawn as inline SVG line
+art) with the page title over it.
 
 ## Tags
 
@@ -36,9 +34,9 @@ to their tag pages.
 
 ## What is in here
 
-- `index.html` — Wandering Watsons hub: nav bar, photo hero, 48 travel posts
-- `eats.html` — Watson Eats hub: nav bar, photo hero, 38 recipes
-- `posts/<slug>.html` — one page per post (86 files), prev/next within its own blog
+- `index.html` — Wandering Watsons hub: nav bar, illustrated hero, 48 travel posts
+- `eats.html` — Watson Eats hub: nav bar, illustrated hero, 38 recipes
+- `posts/<slug>.html` — one page per post (86 files), illustrated hero with the post title over it, prev/next within its own blog
 - `tags/<slug>.html` + `tags/index.html` — one page per tag
 - `style.css`, `script.js` — the only CSS/JS; system fonts, no libraries
 - `sitemap.xml`, `inventory.md` — every post, with date, slug and image count
